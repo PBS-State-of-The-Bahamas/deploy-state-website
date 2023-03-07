@@ -1,5 +1,17 @@
 
 services:
+  reverse-proxy:
+    container_name: reverse-proxy
+    build: .
+    image: reverse-proxy:latest
+    restart: unless-stopped
+    ports:
+      - '80:80'
+    networks:
+      - pbs-state-website
+    depends_on:
+      - frontend
+
   frontend:
     container_name: pbs-bahamas-frontend
     image: quincyarthur242/pbs-bahamas-state-frontend:latest
@@ -9,6 +21,8 @@ services:
       - '3000:3000'
     networks:
       - pbs-state-website
+    depends_on:
+      - backend
 
   backend:
     container_name: pbs-bahamas-backend
