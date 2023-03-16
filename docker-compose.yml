@@ -67,15 +67,16 @@ services:
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
       POSTGRES_DB: ${DATABASE_NAME}
     volumes:
-      - deploy-state-website_strapi-data:/var/lib/postgresql/data/ #using a volume
+      - strapi-data:/var/lib/postgresql/data/ #using a volume
     ports:
       - '5432:5432'
     networks:
       - pbs-state-website
 
 volumes:
-  deploy-state-website_strapi-data:
+  strapi-data:
     external: true
+    name: deploy-state-website_strapi-data
 
 networks:
   pbs-state-website:
