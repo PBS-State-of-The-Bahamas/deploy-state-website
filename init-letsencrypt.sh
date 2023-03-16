@@ -5,7 +5,7 @@ if ! [ -x "$(command -v docker-compose)" ]; then
   exit 1
 fi
 
-domains=(sigmabahamas1914.org www.sigmabahamas1914.org)
+domains=(sigmabahamas1914.org www.sigmabahamas1914.org admin.sigmabahamas1914.org www.admin.sigmabahamas1914.org )
 rsa_key_size=4096
 data_path="./data/certbot"
 email="quincyarthur@gmail.com" # Adding a valid address is strongly recommended
