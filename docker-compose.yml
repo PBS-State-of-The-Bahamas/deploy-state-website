@@ -63,20 +63,15 @@ services:
     env_file: .env
     image: postgres:15.1-alpine
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD:
-      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: gomab
+      POSTGRES_DB: pbs_bahamas
     volumes:
-      - strapi-data:/var/lib/postgresql/data/ #using a volume
+      - ./strapi-data:/var/lib/postgresql/data/ #using a volume
     ports:
       - '5432:5432'
     networks:
       - pbs-state-website
-
-volumes:
-  strapi-data:
-    external: true
-    name: deploy-state-website_strapi-data
 
 networks:
   pbs-state-website:
