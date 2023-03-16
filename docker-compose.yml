@@ -75,6 +75,7 @@ services:
 
 volumes:
   strapi-data:
+    external: true
 
 networks:
   pbs-state-website:
