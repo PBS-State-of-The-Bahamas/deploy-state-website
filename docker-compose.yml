@@ -65,7 +65,6 @@ services:
     environment:
       POSTGRES_USER: ${DATABASE_USERNAME}
       POSTGRES_DB: ${DATABASE_NAME}
-    user: root
     volumes:
       - ./pbs-bahamas-data:/var/lib/postgresql/data/ #using a volume
     ports:
