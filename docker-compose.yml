@@ -67,14 +67,11 @@ services:
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
       POSTGRES_DB: ${DATABASE_NAME}
     volumes:
-      - pbs-bahamas-data:/var/lib/postgresql/data/ #using a volume
+      - ./pbs-bahamas-data:/var/lib/postgresql/data/ #using a volume
     ports:
       - '5432:5432'
     networks:
       - pbs-state-website
-
-volumes:
-  pbs-bahamas-data:
 
 networks:
   pbs-state-website:
