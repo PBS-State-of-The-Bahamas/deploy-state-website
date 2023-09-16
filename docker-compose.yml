@@ -49,6 +49,8 @@ services:
     image: quincyarthur242/pbs-bahamas-state-backend:latest
     restart: unless-stopped
     env_file: .env
+    volumes:
+      - strapi-media:/public/uploads
     ports:
       - '1337:1337'
     networks:
@@ -68,7 +70,6 @@ services:
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
     volumes:
       - strapi-data:/var/lib/postgresql/data/ #using a volume
-      - strapi-media:/public/uploads
     ports:
       - '5432:5432'
     networks:
