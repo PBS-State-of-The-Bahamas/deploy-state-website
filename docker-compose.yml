@@ -50,7 +50,7 @@ services:
     restart: unless-stopped
     env_file: .env
     volumes:
-      - strapi-media:/public/uploads
+      - strapi-media:/opt/app/public/uploads
     ports:
       - '1337:1337'
     networks:
